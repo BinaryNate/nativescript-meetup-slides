@@ -1,11 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Shrikhand');
+@import url('https://fonts.googleapis.com/css?family=Corben');
+
+
 .reveal h1 {
     font-size: 2em;
+    font-family: 'Shrikhand', serif;
+    text-transform: none;
 }
 
 .reveal h2 {
     font-size: 1.7em;
+    font-family: 'Shrikhand', serif;
+    text-transform: none;
 }
 
 .reveal h3 {
     font-size: 1.4em;
+}
+
+
+.dictionary .entry-word {
+    font-family: 'Corben', serif;
+    font-weight: bold;
+    font-size: 2em;
+}
+.dictionary .pronunciation {
+    color: DimGray;
+}
+.dictionary .part-of-speech {
+    font-style: italic;
+}
+.dictionary .definition {
+    margin-top: 1em;
+}
+.dictionary .usage-example {
+    margin-top: 1em;
+    font-style: italic;
+    color: DimGray;
 }
