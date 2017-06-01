@@ -2,17 +2,382 @@
     <head>
         <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
         <link rel="stylesheet" href="node_modules/reveal.js/css/theme/night.css">
+        <link rel="stylesheet" href="src/styles.css">
     </head>
     <body>
         <div class="reveal">
             <div class="slides">
-                <section>Slide 1</section>
-                <section>Slide 2</section>
+                <section data-markdown>
+                    <textarea data-template>
+                        # NativeScript, React-Native, and You
+
+                    </textarea>
+                </section>
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # What are NativeScript and React-Native?
+
+                            Free and open source frameworks for building apps for iOS and Android using JavaScript and CSS.
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Why build a native mobile app instead of a web app?
+
+                            - Hardware APIs
+                            - Performance
+                                - CPU-intensive applications, like video and audio processing
+                                - UI performance (i.e. 60 FPS)
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Why use NativeScript or React-Native instead of implementing platform-specific apps for iOS and Android?
+
+                            - Having separate platform-specific implementations for iOS and Android takes more time in both the development and maintenance phases
+                                - i.e. if something in the app needs to be updated, it must be changed in both code bases
+
+                            - Having separate platform-specific apps require different languages, operating systems, and APIs
+                                - Switching between platforms requires a "context switch" (getting out of the mindset of one platform and into another)
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+
+                            ## Added benefits and other core features
+
+                            - JavaScript rocks
+                            - NPM ecosystem rocks
+                            - Over-the air updates without submitting an update through the app store
+                            - Still have the ability to drop down to Native code for APIs or performance
+                                - Objective-C, C++, Objective-C++, C, Java
+
+                            - Ability to reuse knowledge and code between web and mobile
+
+                            - If your app requires a back-end, you can use Node.js to keep the entire stack JavaScript based
+
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+
+                            ## Trade-offs (downsides)
+
+                            - Additional abstraction layer
+                            - More dependencies
+                            - Not performant enough for some applications
+
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+
+                            ## What would use NativeScript & React-Native for?
+
+                            - Pretty much anything except:
+                                - Games (use Unity or unreal engine for that)
+                                - Code with strict performance requirements
+                                    - You can drop down into native code for that
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## How does it work?
+
+                            - JavaScript VM running in one thread communicates with native code in another thread
+                                - JavaScriptCore on iOS
+                                - V8 on Android
+                            - NativeScript: Proxying to native objects (marshalling)
+                            - React-Native: (batched) Serialized messages passed between Native and JS
+                            - Interface between native and JS is called the bridge
+                            - For debugging, the bridge is a web socket, and the JS runs in a browser
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Design philosophy
+
+                            - Write your app using platform-agnostic interfaces
+                            - The platform and plugins have platform-specific implementations of these interfaces
+                            - Switching to Native code feels similar to making a request to a web server on the web, but without network latency, since it's the same device and program
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## NativeScript vs React-Native, first glance
+
+                            - NativeScript and React-Native are extremely similar
+                            - NativeScript and React-Native are sort of similar to Xamarin
+                            - NativeScript and React-Native are different from Cordova and Ionic
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ### Why use NativeScript or React-Native over webview-based frameworks (e.g. Cordova, Ionic)
+
+                            - Achieve 60 FPS
+                            - Native look and feel
+                            - Ability to embed native components
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## My experience
+
+                            - Created App in NativeScript, ported to React-Native
+                        </textarea>
+                    </section>
+                </section>
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Getting started with NativeScript
+
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Equipment needed
+
+                            - Emulators:
+                                - iOS: Need a Mac for Xcode
+                                - Android: Genymotion
+
+                            - Real devices:
+                                - For iOS, you need to set up a developer account
+
+                            - Text editor or IDE
+
+                            - Terminal (i.e. bash) or command prompt
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Skills needed
+
+                            - Web development experience with JavaScript and CSS helps
+                            - Mobile app development experience helps
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Setup
+
+                            - Installation & setup
+                                - [NativeScript installation guide](http://docs.nativescript.org/start/quick-setup)
+
+                            - Needed software:
+                                - Node.js
+                                - The nativescript CLI (installed via npm)
+                                - Ruby (needed for cocoapods)
+                                - iOS and Android runtimes
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Creating a project
+
+                            - Could choose to use TypeScript or Angular, but will use Vanilla JavaScript for now
+                        </textarea>
+                    </section>
+                </section>
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Development workflow
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Running the app in the emulator
+
+                            - The build process that happens under the hood
+                            - Hot reloading
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Creating a component
+
+                            - Using the nativescript-component library
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Different types of layouts
+
+                            - StackLayout, etc.
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Other kinds of elements
+
+                            - images, etc
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Styling
+
+                            - Subset of CSS supported
+                            - LESS and SASS preprocessors supported
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Hooking up actions
+
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Platform specific-code
+
+                            - Different ways
+                                - different files (i.e. index.ios.js, index.android.js)
+                                - platform detection
+                                - CSS
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Debugging
+
+                            - Using webkit
+                        </textarea>
+                    </section>
+                </section>
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Advanced topics
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Creating native plugins
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Changing build configurations
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Profiling with XCode
+                        </textarea>
+                    </section>
+                </section>
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Publishing to the app store.
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            - CLI command for the final build
+                            - Using X-Code to upload a build to itunes connect
+                            - The onerous process of app store approval
+                        </textarea>
+                    </section>
+                </section>
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # NativeScript vs React-Native
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## History
+
+                            - NativeScript is older, more mature
+                            - React-Native came along later, at first just targeting iOS
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Feature matrix (i.e. this thing in NativeScript maps to this thing in React-Native)
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Similarities
+
+                            - Framework features and goals
+                            - Development workflow
+                            - Excellent docs
+                            - Native plugins
+                            - CLI
+                                - Can provide command mapping comparing NativeScript to React-Native
+                            - Platform specific code (i.e. index.ios.js, index.android.js and platform detection)
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Differences
+
+                            - Angular 2 or vanilla JavaScript vs React
+                            - CSS vs React styles
+                            - Initial setup
+                            - Ability to use Native APIs in JavaScript
+                            - Tooling
+                                - React-Native:
+                                    - Inspector
+                                    - Easily viewable warnings and errors
+
+                            - Approaches in how the XCode and Android Studio projects are viewed
+                                - NativeScript: These are build artifacts that shouldn't be modified or committed
+                                - React-Native: These are committed
+
+                            - React-Native has a smaller set of elements
+                                - View
+                                - Text
+                                - Image
+                                - ScrollView
+                                - MapView
+                                - TabBar
+                                - DatePicker
+                                ...
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## React-Native Advantages
+                            - Adoption in industry, Facebook's resources
+                            - Ability to integrate a React-Native component into an existing native app
+                            - More intuitive way of embedding an array of child components in a parent component
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## Why might you use one over the other
+                            - Choice of application framework
+                            - Want to integrate it into an existing native app? Use React Native.
+                        </textarea>
+                    </section>
+                </section>
             </div>
         </div>
+        <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
         <script src="node_modules/reveal.js/js/reveal.js"></script>
         <script>
-            Reveal.initialize();
+            Reveal.initialize({
+                history: true,
+                // Optional reveal.js plugins
+                dependencies: [
+                    { src: 'node_modules/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'node_modules/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'node_modules/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'node_modules/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'node_modules/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                    { src: 'node_modules/reveal.js/plugin/notes/notes.js', async: true }
+                ]
+            });
         </script>
     </body>
 </html>
