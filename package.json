@@ -1,0 +1,14 @@
+{
+  "name": "nativescript-meetup-slides",
+  "version": "0.0.1",
+  "description": "Slides for the Hack Lafayette meetup on NativeScript, held in Lafayette, IN on June 3, 2017.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nathan Hill",
+  "license": "MIT",
+  "dependencies": {
+    "reveal.js": "^3.5.0"
+  }
+}
