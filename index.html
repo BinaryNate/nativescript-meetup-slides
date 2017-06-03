@@ -32,46 +32,43 @@
                     </section>
                     <section data-markdown>
                         <textarea data-template>
-                            # Why build a native mobile app instead of a web app?
-
+                            # When to go native
+                            ### (instead of web)
                             - Hardware APIs
                             - Performance
-                                - CPU-intensive applications, like video and audio processing
-                                - UI performance (i.e. 60 FPS)
+                                - real-time applications
+                                - CPU-intensive operations
+                                - e.g. video, graphics, or audio processing
+                            - UI responsiveness (i.e. maintaining 60 FPS)
                         </textarea>
                     </section>
                     <section data-markdown>
                         <textarea data-template>
-                            ## Why use NativeScript or React-Native instead of implementing platform-specific apps for iOS and Android?
+                            ## Why not platform-specific apps?
 
-                            - Having separate platform-specific implementations for iOS and Android takes more time in both the development and maintenance phases
-                                - i.e. if something in the app needs to be updated, it must be changed in both code bases
-
-                            - Having separate platform-specific apps require different languages, operating systems, and APIs
-                                - Switching between platforms requires a "context switch" (getting out of the mindset of one platform and into another)
-                        </textarea>
-                    </section>
-                    <section data-markdown>
-                        <textarea data-template>
-
-                            ## Added benefits and other core features
-
-                            - JavaScript rocks
-                            - NPM ecosystem rocks
-                            - Over-the air updates without submitting an update through the app store
-                            - Still have the ability to drop down to Native code for APIs or performance
-                                - Objective-C, C++, Objective-C++, C, Java
-
-                            - Ability to reuse knowledge and code between web and mobile
-
-                            - If your app requires a back-end, you can use Node.js to keep the entire stack JavaScript based
-
+                            - Separate apps for iOS and Android ≈ twice the effort
+                            - Updating a feature means updating two code bases
+                            - Switching between platforms requires a mental context switch
+                                - i.e. different languages, IDEs, and APIs
                         </textarea>
                     </section>
                     <section data-markdown>
                         <textarea data-template>
 
-                            ## Trade-offs (downsides)
+                            # Why NativeScript?
+
+                            - Write once, run on both iOS and Android
+                            - JavaScript & the NPM ecosystem rocks
+                            - Over-the air updates (without the app store)
+                            - Ability to drop down to native code when needed
+                            - Reuse knowledge and code between web and mobile
+
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+
+                            # drawbacks
 
                             - Additional abstraction layer
                             - More dependencies

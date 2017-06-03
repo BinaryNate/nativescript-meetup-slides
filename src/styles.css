@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Shrikhand');
 @import url('https://fonts.googleapis.com/css?family=Corben');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Paaji');
 
+.reveal section {
+    font-family: 'Roboto', san-serif;
+}
+
+.reveal section > ul {
+    margin-top: 1em;
+}
+
+.reveal section li {
+    margin-bottom: 0.25em;
+}
 
 .reveal h1 {
     font-size: 2em;
@@ -16,6 +29,8 @@
 
 .reveal h3 {
     font-size: 1.4em;
+    font-family: 'Shrikhand', serif;
+    text-transform: none;
 }
 
 
