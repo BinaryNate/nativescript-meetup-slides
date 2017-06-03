@@ -339,21 +339,71 @@
                             - LESS and SASS preprocessors supported
                         </textarea>
                     </section>
-                    <section data-markdown>
-                        <textarea data-template>
-                            ## Hooking up actions
+                    <section>
+                         <h2>Hooking up actions</h2>
 
-                        </textarea>
+                        <pre><code data-trim class="xml">
+                            <!-- app/components/my-component/my-component.xml -->
+
+                            <Page navigatingTo="onNavigatingTo">
+
+                                <StackLayout class="message-box">
+
+                                    <TextField text="{{ message }}" tap="onTap" ></TextField>
+
+                                </StackLayout>
+                            </Page>
+                        </code></pre>
                     </section>
-                    <section data-markdown>
-                        <textarea data-template>
-                            ## Platform specific-code
+                    <section>
+                         <h2>Hooking up actions</h2>
 
-                            - Different ways
-                                - different files (i.e. index.ios.js, index.android.js)
-                                - platform detection
-                                - CSS
-                        </textarea>
+                        <pre><code data-trim class="js">
+                            // app/components/my-component/my-component.js
+                            import Component from 'nativescript-component';
+
+                            class MyComponent extends Component {
+
+                                init() {
+
+                                    this.set('message', 'Hello, world!');
+                                }
+
+                                onTap() {
+
+                                    alert('Great job!');
+                                }
+                            }
+                            MyComponent.export(exports);
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Platform-specific code</h2>
+
+                        <pre><code data-trim class="js">
+                            // app/components/my-component/my-component.js
+                            import Component from 'nativescript-component';
+                            import { device } from 'tns-core-modules/platform';
+
+                            class MyComponent extends Component {
+
+                                init() {
+
+                                    if (device.os.includes('iOS')) {
+                                        this.set('message', 'Hello, iOS!');
+                                    } else {
+                                        this.set('message', 'Hello, Android!');
+                                    }
+                                }
+
+                                onTap() {
+
+                                    alert('Great job!');
+                                }
+                            }
+                            MyComponent.export(exports);
+                        </code></pre>
+
                     </section>
                     <section data-markdown>
                         <textarea data-template>
