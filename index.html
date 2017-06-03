@@ -403,14 +403,18 @@
                             }
                             MyComponent.export(exports);
                         </code></pre>
-
                     </section>
                     <section data-markdown>
                         <textarea data-template>
-                            ## Debugging
-
-                            - Using webkit
+                            ## Voxophone example
                         </textarea>
+                    </section>
+                    <section>
+                        <h2>Debugging</h2>
+
+                        <pre><code data-trim class="bash">
+                            $ tns debug ios
+                        </code></pre>
                     </section>
                 </section>
                 <section>
@@ -431,22 +435,20 @@
                     </section>
                     <section data-markdown>
                         <textarea data-template>
-                            ## Profiling with XCode
+                            ## Profiling with Xcode
                         </textarea>
                     </section>
-                </section>
-                <section>
-                    <section data-markdown class="title-slide">
-                        <textarea data-template>
-                            # Publishing your app
-                        </textarea>
-                    </section>
-                    <section data-markdown>
-                        <textarea data-template>
-                            - CLI command for the final build
-                            - Using X-Code to upload a build to itunes connect
-                            - The onerous process of app store approval
-                        </textarea>
+                    <section>
+
+                        <h2>Publishing your app</h2>
+                        <ul>
+                            <li>CLI command to prepare for final build</li>
+                            <pre><code data-trim class="bash">
+                                $ tns prepare ios --release
+                            </code></pre>
+
+                            <li>Use Xcode to upload a build to iTunes Connect</li>
+                        </ul>
                     </section>
                 </section>
                 <section>
@@ -459,13 +461,8 @@
                         <textarea data-template>
                             ## History
 
-                            - NativeScript is older, more mature
-                            - React-Native came along later, at first just targeting iOS
-                        </textarea>
-                    </section>
-                    <section data-markdown>
-                        <textarea data-template>
-                            ## Feature matrix (i.e. this thing in NativeScript maps to this thing in React-Native)
+                            - NativeScript is older
+                            - React-Native came along later, at first just targeting iOS, but quickly gained developer mindshare
                         </textarea>
                     </section>
                     <section data-markdown>
@@ -477,36 +474,17 @@
                             - Excellent docs
                             - Native plugins
                             - CLI
-                                - Can provide command mapping comparing NativeScript to React-Native
-                            - Platform specific code (i.e. index.ios.js, index.android.js and platform detection)
+                            - Platform-specific code (i.e. index.ios.js, index.android.js)
                         </textarea>
                     </section>
                     <section data-markdown>
                         <textarea data-template>
                             ## Differences
 
-                            - Angular 2 or vanilla JavaScript vs React
+                            - Angular 2 vs React
+                            - XML vs JSX
                             - CSS vs React styles
-                            - Initial setup
-                            - Ability to use Native APIs in JavaScript
-                            - Tooling
-                                - React-Native:
-                                    - Inspector
-                                    - Easily viewable warnings and errors
-
-                            - Approaches in how the XCode and Android Studio projects are viewed
-                                - NativeScript: These are build artifacts that shouldn't be modified or committed
-                                - React-Native: These are committed
-
-                            - React-Native has a smaller set of elements
-                                - View
-                                - Text
-                                - Image
-                                - ScrollView
-                                - MapView
-                                - TabBar
-                                - DatePicker
-                                ...
+                            - Xcode project as build artifact vs committing to repo
                         </textarea>
                     </section>
                     <section data-markdown>
@@ -514,17 +492,36 @@
                             ## React-Native Advantages
                             - Adoption in industry, Facebook's resources
                             - Ability to integrate a React-Native component into an existing native app
-                            - More intuitive way of embedding an array of child components in a parent component
+                            - Tooling
+                                - Inspector
+                                - Easily viewable warnings and errors
                         </textarea>
                     </section>
                     <section data-markdown>
                         <textarea data-template>
+                            ## NativeScript Advantages
+
+                            - Ability to use Native APIs in JavaScript
+                            - Code reuse between web and mobile with Angular
+                        </textarea>
+                    </section>
+
+                    <section data-markdown>
+                        <textarea data-template>
                             ## Why might you use one over the other
-                            - Choice of application framework
+                            - Choice of application framework (Angular 2 / React)
                             - Want to integrate it into an existing native app? Use React Native.
                         </textarea>
                     </section>
                 </section>
+                <section>
+                    <section data-markdown class="title-slide">
+                        <textarea data-template>
+                            # Questions?
+                        </textarea>
+                    </section>
+                </section>
+
             </div>
         </div>
         <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
