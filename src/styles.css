@@ -92,3 +92,12 @@
 .reveal section .ios {
     color: #255aab;
 }
+
+.reveal .table-row {
+    display: flex;
+}
+
+.reveal .table-item {
+    flex: 1;
+    margin-top: 0.5em;
+}
