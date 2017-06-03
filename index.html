@@ -199,7 +199,7 @@
                     </section>
                     <section>
                         <h1>Creating a project</h1>
-                        <pre><code data-trim data-noescape>
+                        <pre><code data-trim class="bash">
                             $ tns create my-app
                             # Then after that command finishes:
                             $ cd my-app
@@ -208,10 +208,10 @@
 
                     <section>
                         <h1>Running the app</h1>
-                        <pre><code data-trim data-noescape>
+                        <pre><code data-trim class="bash">
                             $ tns run ios --emulator
                         </code></pre>
-                        <pre><code data-trim data-noescape>
+                        <pre><code data-trim class="bash">
                             $ tns run android
                         </code></pre>
                     </section>
@@ -223,13 +223,67 @@
                             # Development workflow
                         </textarea>
                     </section>
-                    <section data-markdown>
-                        <textarea data-template>
-                            ## Creating a component
+                    <section>
+                        <h2>Creating a component</h2>
 
-                            - Using the nativescript-component library
-                        </textarea>
+                        <ul>
+                            <li>
+                        Using the <a href="https://www.npmjs.com/package/nativescript-component">nativescript-component</a> module
+                            </li>
+                        </ul>
+
+                        <pre><code data-trim class="bash">
+                            $ npm install nativescript-component --save
+                        </code></pre>
                     </section>
+                    <section>
+                        <h2>Component JS</h2>
+
+                        <pre><code data-trim class="js">
+                            // app/components/my-component/my-component.js
+                            import Component from 'nativescript-component';
+
+                            class MyComponent extends Component {
+
+                                init() {
+
+                                    this.set('message', 'Hello, world!');
+                                }
+                            }
+                            MyComponent.export(exports);
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Component XML</h2>
+
+                        <pre><code data-trim class="xml">
+                            <!-- app/components/my-component/my-component.xml -->
+
+                            <Page navigatingTo="onNavigatingTo">
+
+                                <StackLayout class="message-box">
+
+                                    <TextField text="{{ message }}" ></TextField>
+
+                                </StackLayout>
+                            </Page>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Component CSS</h2>
+
+                        <pre><code data-trim class="css">
+                            /* app/components/my-component/my-component.css */
+
+                            .message-box {
+
+                                background-color: orange;
+                                color: white;
+                                border-radius: 10;
+                            }
+                        </code></pre>
+                    </section>
+
                     <section data-markdown>
                         <textarea data-template>
                             ## Different types of layouts
