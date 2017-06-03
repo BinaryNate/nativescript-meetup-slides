@@ -2,6 +2,7 @@
     <head>
         <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
         <link rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css">
+        <link rel="stylesheet" href="node_modules/reveal.js/lib/css/zenburn.css">
         <link rel="stylesheet" href="src/styles.css">
     </head>
     <body>
@@ -34,7 +35,7 @@
                         <textarea data-template>
                             ## My experience
 
-                            - Created my Voxophone in NativeScript, recently ported to React-Native as an experiment
+                            - Created my Voxophone app in NativeScript and, as an experiment, ported it to React-Native
                                 - [NativeScript version](https://github.com/BinaryNate/voxophone)
                                 - [React-Native version](https://github.com/BinaryNate/voxophone-react-native)
                                 - [website](https://sonic.design/)
@@ -196,33 +197,30 @@
                                 - iOS and Android NativeScript runtimes
                         </textarea>
                     </section>
-                    <section data-markdown>
-                        <textarea data-template>
-                            ## Design
-
-                            (put app design here)
-                        </textarea>
+                    <section>
+                        <h1>Creating a project</h1>
+                        <pre><code data-trim data-noescape>
+                            $ tns create my-app
+                            # Then after that command finishes:
+                            $ cd my-app
+                        </code></pre>
                     </section>
-                    <section data-markdown>
-                        <textarea data-template>
-                            ## Creating a project
 
-                            (put code snippet here)
-                        </textarea>
+                    <section>
+                        <h1>Running the app</h1>
+                        <pre><code data-trim data-noescape>
+                            $ tns run ios --emulator
+                        </code></pre>
+                        <pre><code data-trim data-noescape>
+                            $ tns run android
+                        </code></pre>
                     </section>
+
                 </section>
                 <section>
                     <section data-markdown class="title-slide">
                         <textarea data-template>
                             # Development workflow
-                        </textarea>
-                    </section>
-                    <section data-markdown>
-                        <textarea data-template>
-                            ## Running the app in the emulator
-
-                            - The build process that happens under the hood
-                            - Hot reloading
                         </textarea>
                     </section>
                     <section data-markdown>
@@ -394,6 +392,7 @@
         </div>
         <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
         <script src="node_modules/reveal.js/js/reveal.js"></script>
+        <script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
         <script>
             Reveal.initialize({
                 history: true,

@@ -51,6 +51,10 @@
     background: none;
 }
 
+.reveal code {
+    margin-top: 2em;
+}
+
 
 .dictionary .entry-word {
     font-family: 'Corben', serif;
