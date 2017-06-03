@@ -76,3 +76,15 @@
 .reveal .nativescript-logo {
     max-width: 300px;
 }
+
+.reveal section .android {
+    color: #92ba58;
+}
+
+.reveal section .android a {
+    color: #536d2c;
+}
+
+.reveal section .ios {
+    color: #255aab;
+}
