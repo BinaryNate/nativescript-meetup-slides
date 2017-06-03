@@ -7,10 +7,10 @@
     <body>
         <div class="reveal">
             <div class="slides">
-                <section data-markdown>
+                <section data-markdown class="title-slide">
                     <textarea data-template>
                         # NativeScript and You
-
+                        <img class="nativescript-logo" src="src/img/nativescript-logo.svg">
                     </textarea>
                 </section>
                 <section>
@@ -29,6 +29,16 @@
                         <div class="usage-example">
                         NativeScript renders UIs with the native platform’s rendering engine—no WebViews—resulting in native-like performance and UX.
                         </div>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            ## My experience
+
+                            - Created my Voxophone in NativeScript, recently ported to React-Native as an experiment
+                                - [NativeScript version](https://github.com/BinaryNate/voxophone)
+                                - [React-Native version](https://github.com/BinaryNate/voxophone-react-native)
+                                - [website](https://sonic.design/)
+                        </textarea>
                     </section>
                     <section data-markdown>
                         <textarea data-template>
@@ -79,26 +89,27 @@
                     <section data-markdown>
                         <textarea data-template>
 
-                            ## What would use NativeScript & React-Native for?
+                            ## When to not use NativeScript
 
-                            - Pretty much anything except:
-                                - Games (use Unity or unreal engine for that)
-                                - Code with strict performance requirements
-                                    - You can drop down into native code for that
+                            - Non-trivial games (use Unity or Unreal Engine)
+
                         </textarea>
                     </section>
                     <section data-markdown>
                         <textarea data-template>
-                            ## How does it work?
 
-                            - JavaScript VM running in one thread communicates with native code in another thread
+                            ## How NativeScript works
+
+                            - Runtime renders native views from XML and CSS
+                            - JavaScript VM executes app logic
                                 - JavaScriptCore on iOS
                                 - V8 on Android
-                            - NativeScript: Proxying to native objects (marshalling)
-                            - React-Native: (batched) Serialized messages passed between Native and JS
-                            - Interface between native and JS is called the bridge
-                            - For debugging, the bridge is a web socket, and the JS runs in a browser
+                            - Platform-agnostic APIs for maximum code reuse
+                            - **All platform-specific APIs are also available in JavaScript**
                         </textarea>
+                    </section>
+                    <section>
+                        <img src="src/img/nativescript-runtime.png">
                     </section>
                     <section data-markdown>
                         <textarea data-template>
@@ -106,37 +117,32 @@
 
                             - Write your app using platform-agnostic interfaces
                             - The platform and plugins have platform-specific implementations of these interfaces
-                            - Switching to Native code feels similar to making a request to a web server on the web, but without network latency, since it's the same device and program
+                            - Dropping down to native code feels similar to making a request to a web server on the web, but without network latency
                         </textarea>
                     </section>
                     <section data-markdown>
                         <textarea data-template>
-                            ## NativeScript vs React-Native, first glance
+                            ### NativeScript vs React-Native, first glance
 
-                            - NativeScript and React-Native are extremely similar
-                            - NativeScript and React-Native are sort of similar to Xamarin
-                            - NativeScript and React-Native are different from Cordova and Ionic
+                            - They are extremely similar
+                            - Syntax varies, but concepts and features are mostly equivalent
+                            - More details later in the presentation
                         </textarea>
                     </section>
                     <section data-markdown>
                         <textarea data-template>
-                            ### Why use NativeScript or React-Native over webview-based frameworks (e.g. Cordova, Ionic)
+                            ## What about other frameworks?
 
-                            - Achieve 60 FPS
-                            - Native look and feel
-                            - Ability to embed native components
-                        </textarea>
-                    </section>
-                    <section data-markdown>
-                        <textarea data-template>
-                            ## My experience
-
-                            - Created App in NativeScript, ported to React-Native
+                            - Xamarin similarly creates native views with C#
+                            - Ionic and Cordova use embedded web views:
+                                - Doesn't look and feel like a native app
+                                - More difficult to achieve a high frame rate
+                                - Can't embed native components
                         </textarea>
                     </section>
                 </section>
                 <section>
-                    <section data-markdown>
+                    <section data-markdown class="title-slide">
                         <textarea data-template>
                             # Getting started with NativeScript
 
@@ -189,7 +195,7 @@
                     </section>
                 </section>
                 <section>
-                    <section data-markdown>
+                    <section data-markdown class="title-slide">
                         <textarea data-template>
                             # Development workflow
                         </textarea>
@@ -256,7 +262,7 @@
                     </section>
                 </section>
                 <section>
-                    <section data-markdown>
+                    <section data-markdown class="title-slide">
                         <textarea data-template>
                             # Advanced topics
                         </textarea>
@@ -278,9 +284,9 @@
                     </section>
                 </section>
                 <section>
-                    <section data-markdown>
+                    <section data-markdown class="title-slide">
                         <textarea data-template>
-                            # Publishing to the app store.
+                            # Publishing your app
                         </textarea>
                     </section>
                     <section data-markdown>
@@ -292,7 +298,7 @@
                     </section>
                 </section>
                 <section>
-                    <section data-markdown>
+                    <section data-markdown class="title-slide">
                         <textarea data-template>
                             # NativeScript vs React-Native
                         </textarea>

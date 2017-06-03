@@ -3,6 +3,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Baloo+Paaji');
 
+.reveal .title-slide {
+    background-color: #00a3cc;
+    color: white;
+}
+
 .reveal section {
     font-family: 'Roboto', san-serif;
 }
@@ -19,18 +24,31 @@
     font-size: 2em;
     font-family: 'Shrikhand', serif;
     text-transform: none;
+    color: #00a3cc;
 }
 
 .reveal h2 {
     font-size: 1.7em;
     font-family: 'Shrikhand', serif;
     text-transform: none;
+    color: #00a3cc;
 }
 
 .reveal h3 {
     font-size: 1.4em;
     font-family: 'Shrikhand', serif;
     text-transform: none;
+    color: #00a3cc;
+}
+
+.reveal section a {
+    color: #00a3cc;
+}
+
+.reveal section img {
+    border: none;
+    box-shadow: none;
+    background: none;
 }
 
 
@@ -38,6 +56,7 @@
     font-family: 'Corben', serif;
     font-weight: bold;
     font-size: 2em;
+    color: #00a3cc;
 }
 .dictionary .pronunciation {
     color: DimGray;
@@ -52,4 +71,8 @@
     margin-top: 1em;
     font-style: italic;
     color: DimGray;
+}
+
+.reveal .nativescript-logo {
+    max-width: 300px;
 }
